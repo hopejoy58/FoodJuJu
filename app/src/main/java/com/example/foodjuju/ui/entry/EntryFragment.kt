@@ -12,18 +12,18 @@ import com.example.foodjuju.R
 
 class EntryFragment : Fragment() {
 
-        private lateinit var calendarViewModel: EntryViewModel
+        private lateinit var entryViewModel: EntryViewModel
 
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            calendarViewModel =
+            entryViewModel =
                 ViewModelProviders.of(this).get(EntryViewModel::class.java)
-            val root = inflater.inflate(R.layout.fragment_calendar, container, false)
+            val root = inflater.inflate(R.layout.fragment_entry, container, false)
             val textView: TextView = root.findViewById(R.id.text_dashboard)
-            calendarViewModel.text.observe(viewLifecycleOwner, Observer {
+            entryViewModel.text.observe(viewLifecycleOwner, Observer {
                 textView.text = it
             })
             return root
