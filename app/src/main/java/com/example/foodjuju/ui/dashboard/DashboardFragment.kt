@@ -19,9 +19,15 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+<<<<<<< Updated upstream:app/src/main/java/com/example/foodjuju/ui/dashboard/DashboardFragment.kt
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+=======
+        calendarViewModel =
+                ViewModelProviders.of(this).get(CalendarViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_calendar, container, false)
+>>>>>>> Stashed changes:app/src/main/java/com/example/foodjuju/ui/calendar/CalendarFragment.kt
         val textView: TextView = root.findViewById(R.id.text_dashboard)
         dashboardViewModel.text.observe(this, Observer {
             textView.text = it
