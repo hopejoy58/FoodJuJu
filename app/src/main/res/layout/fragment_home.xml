@@ -35,4 +35,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add_foreground" />
 
+    <TextView
+        android:id="@+id/LabelforReport"
+        android:layout_width="179dp"
+        android:layout_height="66dp"
+        android:text="Add new food report.."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="603dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
