@@ -20,8 +20,8 @@
 
     <EditText
         android:id="@+id/foodName"
-        android:layout_width="379dp"
-        android:layout_height="45dp"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Name of Food"
@@ -98,16 +98,19 @@
         android:id="@+id/imageButton"
         android:layout_width="152dp"
         android:layout_height="104dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_cancel_24dp"
-        tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="621dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="152dp"
         android:layout_height="104dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_save_24dp"
-        tools:layout_editor_absoluteX="210dp"
         tools:layout_editor_absoluteY="621dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
