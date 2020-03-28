@@ -33,6 +33,6 @@
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add_foreground" />
+        app:srcCompat="@drawable/ic_add_circle_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

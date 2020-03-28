@@ -98,7 +98,7 @@
         android:id="@+id/imageButton"
         android:layout_width="152dp"
         android:layout_height="104dp"
-        app:srcCompat="@drawable/ic_cancel_foreground"
+        app:srcCompat="@drawable/ic_cancel_24dp"
         tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="621dp" />
 
@@ -106,7 +106,7 @@
         android:id="@+id/imageButton2"
         android:layout_width="152dp"
         android:layout_height="104dp"
-        app:srcCompat="@drawable/ic_save_foreground"
+        app:srcCompat="@drawable/ic_save_24dp"
         tools:layout_editor_absoluteX="210dp"
         tools:layout_editor_absoluteY="621dp" />
 
