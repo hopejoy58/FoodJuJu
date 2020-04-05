@@ -9,5 +9,5 @@ class ReportViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "This is the notifications fragment."
     }
-   internal val text: LiveData<String> = _text
+    internal val text: LiveData<String> = _text
 }
