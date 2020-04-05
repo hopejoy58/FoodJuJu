@@ -9,5 +9,5 @@ class HomeViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "This is the home fragment."
     }
-    val text: LiveData<String> = _text
+   internal val text: LiveData<String> = _text
 }
