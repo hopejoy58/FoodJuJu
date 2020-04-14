@@ -9,5 +9,5 @@ class CalendarViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "This is the dashboard fragment."
     }
-   internal val text: LiveData<String> = _text
+   val text: LiveData<String> = _text
 }
