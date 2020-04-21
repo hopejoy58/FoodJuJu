@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.foodjuju.R
 
 class EntryFragment : Fragment() {
+
     private lateinit var entryViewModel: EntryViewModel
 
     override fun onCreateView(
@@ -21,10 +22,6 @@ class EntryFragment : Fragment() {
         entryViewModel =
             ViewModelProviders.of(this).get(entryViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_entry, container, false)
-        val textView: TextView = root.findViewById(R.id.text_entry)
-        entryViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 }
