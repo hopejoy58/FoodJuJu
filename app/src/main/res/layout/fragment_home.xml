@@ -13,11 +13,25 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.011" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/view_recycler"
+        android:layout_width="414dp"
+        android:layout_height="691dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.279"
+        tools:listitem="@layout/recycler_view_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

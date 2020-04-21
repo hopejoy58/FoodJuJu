@@ -4,4 +4,5 @@
     <item name="text_entry" type="id" value="entry"/>
     <item name="text_calendar" type="id" value="calendar"/>
     <item name="text_report" type="id" value="report"/>
+    <item name="view_recycler" type="id" value="recycler"/>
 </resources>
