@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "778762968807",
+    "firebase_url": "https://foodjuju-ff092.firebaseio.com",
+    "project_id": "foodjuju-ff092",
+    "storage_bucket": "foodjuju-ff092.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778762968807:android:9e821d99e7f6d235988c42",
+        "android_client_info": {
+          "package_name": "com.example.foodjuju"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778762968807-egg380dceq6end1vd3bj0mt8snh7enrb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cKHoQ5ay-f1NIau2t_x4SAlZiyytfy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778762968807-egg380dceq6end1vd3bj0mt8snh7enrb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

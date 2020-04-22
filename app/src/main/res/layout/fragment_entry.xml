@@ -21,22 +21,22 @@
 
     <EditText
         android:id="@+id/foodName"
-        android:layout_width="390dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:ems="10"
         android:hint="Name of Food"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_food" />
 
     <EditText
         android:id="@+id/foodDescription"
-        android:layout_width="384dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:ems="10"
         android:hint="Description"
         android:inputType="textMultiLine"
@@ -47,13 +47,14 @@
 
     <EditText
         android:id="@+id/foodIngredients"
-        android:layout_width="378dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ingredients"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodDescription" />
 
@@ -72,38 +73,38 @@
 
     <EditText
         android:id="@+id/mood"
-        android:layout_width="390dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Mood"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moodLabel" />
 
     <EditText
         android:id="@+id/moodComments"
-        android:layout_width="387dp"
-        android:layout_height="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Comments"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mood" />
 
     <ImageButton
         android:id="@+id/btn_cancel"
-        android:layout_width="185dp"
-        android:layout_height="78dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_save"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moodComments"
         app:layout_constraintVertical_bias="0.0"
@@ -111,8 +112,8 @@
 
     <ImageButton
         android:id="@+id/btn_save"
-        android:layout_width="181dp"
-        android:layout_height="78dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -121,5 +122,6 @@
         app:layout_constraintTop_toBottomOf="@+id/moodComments"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_save_24dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
