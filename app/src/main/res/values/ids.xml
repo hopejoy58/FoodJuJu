@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_home" type="id" value="home"/>
+    <item name="text_entry" type="id" value="entry"/>
     <item name="text_calendar" type="id" value="calendar"/>
     <item name="text_report" type="id" value="report"/>
+    <item name="view_recycler" type="id" value="recycler"/>
 </resources>
