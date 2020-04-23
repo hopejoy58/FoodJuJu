@@ -27,9 +27,9 @@ class EntryFragment : Fragment() {
         view.findViewById<Button>(R.id.button_cancel).setOnClickListener {
             findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
         }
-
         view.findViewById<Button>(R.id.button_save).setOnClickListener {
-            findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
+            (activity as MainActivity).saveData()
+            //findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
         }
 
     }
