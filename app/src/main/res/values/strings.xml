@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FoodJuju</string>
     <string name="title_home">Home</string>
-    <string name="title_report">Report</string>
+    <string name="title_entry">New Entry</string>
     <string name="title_calendar">Calendar</string>
-    <string name="new_report_message">Add a new report</string>
+    <string name="title_report">Report</string>
 </resources>

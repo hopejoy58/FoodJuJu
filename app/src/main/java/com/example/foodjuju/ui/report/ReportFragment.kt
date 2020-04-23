@@ -20,7 +20,7 @@ class ReportFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         reportViewModel =
-                ViewModelProviders.of(this).get(ReportViewModel::class.java)
+            ViewModelProviders.of(this).get(ReportViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_report, container, false)
         val textView: TextView = root.findViewById(R.id.text_report)
         reportViewModel.text.observe(viewLifecycleOwner, Observer {
