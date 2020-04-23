@@ -5,11 +5,10 @@
               android:padding="8dp"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
-
   <ImageView
       android:layout_width="70dp"
       android:layout_height="70dp"
-      tools:srcCompat="@drawable/ic_food" />
+      tools:src="@tools:sample/avatars"/>
   <LinearLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -17,17 +16,17 @@
       android:padding="5dp"
       android:orientation="vertical">
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@tools:sample/lorem[3]" />
+        tools:text="@tools:sample/first_names" />
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@tools:sample/lorem[4]" />
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@tools:sample/lorem[2]" />
