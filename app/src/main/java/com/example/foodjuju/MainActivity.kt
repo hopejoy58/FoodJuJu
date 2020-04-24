@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveData(){
 
-        lateinit var btn_save: Button
         databaseReference = FirebaseDatabase.getInstance().getReference("foods")
 
         foodName = findViewById(R.id.foodName)
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         foodIngredients = findViewById(R.id.foodIngredients)
         mood = findViewById(R.id.mood)
         moodComments = findViewById(R.id.moodComments)
-        btn_save = findViewById(R.id.button_save)
+        var btn_save: Button = findViewById(R.id.button_save)
 
         val foodId = databaseReference.push().key.toString()
         val food = foodName.text.toString().trim()
@@ -53,9 +52,9 @@ class MainActivity : AppCompatActivity() {
         val comments = moodComments.text.toString().trim()
 
         val userProvides = FoodData(foodId, food, description, ingredients, foodMood, comments)
-        btn_save.setOnClickListener(View.OnClickListener {
+        btn_save.apply {
             databaseReference.child(foodId).setValue(userProvides)
-        })
+        }
 
 
         //database.child("foods").child().setValue(userProvides)
