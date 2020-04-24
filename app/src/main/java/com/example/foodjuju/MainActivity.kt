@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var foodIngredients: EditText
     lateinit var mood: EditText
     lateinit var moodComments: EditText
-    lateinit var btn_cancel: Button
 
 
     var databaseReference: DatabaseReference = Firebase.database.reference
@@ -57,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             databaseReference.child(foodId).setValue(userProvides)
         })
 
+        Toast.makeText(applicationContext, "Saved", Toast.LENGTH_LONG)
+            .show()
 
         //database.child("foods").child().setValue(userProvides)
         /*

@@ -2,14 +2,14 @@ package com.example.foodjuju
 
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_home.*
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -21,20 +21,40 @@ class HomeActivity : AppCompatActivity() {
     lateinit var moodComments: EditText
 
     var databaseReference: DatabaseReference = Firebase.database.reference
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
 
+        getFromDatabase()
         loadData()
-        setAdapter()
+
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = RecyclerAdapter(dataList)
+
+        recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = viewManager
+
+            // specify an viewAdapter (see also next example)
+            adapter = viewAdapter
+
+        }
     }
 
     private fun loadData() {
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
+        getFromDatabase()
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
         foodName = findViewById(R.id.foodName)
         foodDescription = findViewById(R.id.foodDescription)
         foodIngredients = findViewById(R.id.foodIngredients)
@@ -49,13 +69,29 @@ class HomeActivity : AppCompatActivity() {
         val comments = moodComments.text.toString().trim()
         dataList.add(FoodData(foodId, food, description, ingredients, foodMood, comments))
 
+
     }
 
-    private fun setAdapter() {
-        recyclerView?.apply {
-            layoutManager = LinearLayoutManager(this@HomeActivity)
-            addItemDecoration(DividerItemDecoration(this@HomeActivity, DividerItemDecoration.VERTICAL))
-            //adapter = RecyclerRAdapter(this@HomeActivity, dataList)
-        }
+    fun getFromDatabase(){
+        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                val value =
+                    dataSnapshot.getValue(String::class.java)
+                Toast.makeText(applicationContext, "Successfully saved to database.", Toast.LENGTH_LONG)
+                    .show()
+                Toast.makeText(applicationContext, value, Toast.LENGTH_LONG)
+                    .show()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Toast.makeText(applicationContext, "Nope.", Toast.LENGTH_LONG)
+                    .show()
+            }
+        })
+
     }
 }
