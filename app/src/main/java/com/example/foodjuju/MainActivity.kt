@@ -28,7 +28,39 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
     }
 
-    fun saveData(){
+    private fun saveData(){
+
+        Toast.makeText(applicationContext, "Saved (or not lol)", Toast.LENGTH_LONG)
+            .show()
+
+
+        foodName = findViewById(R.id.foodName)
+        foodDescription = findViewById(R.id.foodDescription)
+        foodIngredients = findViewById(R.id.foodIngredients)
+        mood = findViewById(R.id.mood)
+        moodComments = findViewById(R.id.moodComments)
+
+        val food = foodName.text.toString().trim()
+        val description = foodDescription.text.toString().trim()
+        val ingredients = foodIngredients.text.toString().trim()
+        val foodMood = mood.text.toString().trim()
+        val comments = moodComments.text.toString().trim()
+
+        /*
+        val ref = FirebaseDatabase.getInstance().getReference("foods")
+        val foodId = ref.push().key.toString()
+        val foods = FoodData(foodId, food, description, ingredients, foodMood, comments)
+
+        ref.child(foodId).setValue(foods).addOnCompleteListener {
+            Toast.makeText(applicationContext, "Successfully saved to database.", Toast.LENGTH_LONG)
+                .show()
+        }
+        */
+
+
+    }
+
+    fun validation(){
 
         foodName = findViewById(R.id.foodName)
         foodDescription = findViewById(R.id.foodDescription)
@@ -47,28 +79,20 @@ class MainActivity : AppCompatActivity() {
             foodName.error = "Please enter name of food."
             return
         }
-        if (description.isEmpty()){
+        else if (description.isEmpty()){
             foodDescription.error = "Please enter description of food."
             return
         }
-        if (ingredients.isEmpty()){
+        else if (ingredients.isEmpty()){
             foodIngredients.error = "Please enter ingredients of food."
             return
         }
-        if (foodMood.isEmpty()){
+        else if (foodMood.isEmpty()){
             mood.error = "Please enter mood."
             return
         }
-
-
-        val ref = FirebaseDatabase.getInstance().getReference("foods")
-        val foodId = ref.push().key.toString()
-        val foods = FoodData(foodId, food, description, ingredients, foodMood, comments)
-
-        ref.child(foodId).setValue(foods).addOnCompleteListener {
-            Toast.makeText(applicationContext, "Successfully saved to database.", Toast.LENGTH_LONG)
-                .show()
+        else {
+            saveData();
         }
-
     }
 }
