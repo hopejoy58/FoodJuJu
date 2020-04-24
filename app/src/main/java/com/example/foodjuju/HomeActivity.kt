@@ -30,7 +30,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
 
-        getFromDatabase()
         loadData()
 
         viewManager = LinearLayoutManager(this)
@@ -52,27 +51,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun loadData() {
 
-        getFromDatabase()
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
-        foodName = findViewById(R.id.foodName)
-        foodDescription = findViewById(R.id.foodDescription)
-        foodIngredients = findViewById(R.id.foodIngredients)
-        mood = findViewById(R.id.mood)
-        moodComments = findViewById(R.id.moodComments)
-
-        val foodId = databaseReference.push().key.toString()
-        val food = foodName.text.toString().trim()
-        val description = foodDescription.text.toString().trim()
-        val ingredients = foodIngredients.text.toString().trim()
-        val foodMood = mood.text.toString().trim()
-        val comments = moodComments.text.toString().trim()
-        dataList.add(FoodData(foodId, food, description, ingredients, foodMood, comments))
-
-
-    }
-
-    fun getFromDatabase(){
         databaseReference = FirebaseDatabase.getInstance().getReference("foods")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -93,5 +71,21 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
+        foodName = findViewById(R.id.foodName)
+        foodDescription = findViewById(R.id.foodDescription)
+        foodIngredients = findViewById(R.id.foodIngredients)
+        mood = findViewById(R.id.mood)
+        moodComments = findViewById(R.id.moodComments)
+
+        val foodId = databaseReference.push().key.toString()
+        val food = foodName.text.toString().trim()
+        val description = foodDescription.text.toString().trim()
+        val ingredients = foodIngredients.text.toString().trim()
+        val foodMood = mood.text.toString().trim()
+        val comments = moodComments.text.toString().trim()
+        dataList.add(FoodData(foodId, food, description, ingredients, foodMood, comments))
+
+
     }
+
 }
