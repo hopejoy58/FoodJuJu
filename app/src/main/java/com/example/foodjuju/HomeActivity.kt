@@ -58,10 +58,6 @@ class HomeActivity : AppCompatActivity() {
                 // whenever data at this location is updated.
                 val value =
                     dataSnapshot.getValue(String::class.java)
-                Toast.makeText(applicationContext, "Successfully saved to database.", Toast.LENGTH_LONG)
-                    .show()
-                Toast.makeText(applicationContext, value, Toast.LENGTH_LONG)
-                    .show()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -71,19 +67,6 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        foodName = findViewById(R.id.foodName)
-        foodDescription = findViewById(R.id.foodDescription)
-        foodIngredients = findViewById(R.id.foodIngredients)
-        mood = findViewById(R.id.mood)
-        moodComments = findViewById(R.id.moodComments)
-
-        val foodId = databaseReference.push().key.toString()
-        val food = foodName.text.toString().trim()
-        val description = foodDescription.text.toString().trim()
-        val ingredients = foodIngredients.text.toString().trim()
-        val foodMood = mood.text.toString().trim()
-        val comments = moodComments.text.toString().trim()
-        dataList.add(FoodData(foodId, food, description, ingredients, foodMood, comments))
 
 
     }

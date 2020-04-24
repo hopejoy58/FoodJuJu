@@ -29,15 +29,4 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_HomeFragment_to_EntryFragment)
         }
     }
-    inner class loadRecycler(view: View) : RecyclerView.ViewHolder(view){
-        private var foodName : View = itemView.findViewById(R.id.card_foodName)
-        private var foodDesc : View = itemView.findViewById(R.id.card_foodDescription)
-        private var foodIng : View = itemView.findViewById(R.id.card_foodIngredients)
-        private var mood : View = itemView.findViewById(R.id.card_mood)
-        private var moodComments : View = itemView.findViewById(R.id.card_moodComment)
-
-
-
-
-    }
 }
