@@ -1,57 +1,34 @@
 {
   "project_info": {
-<<<<<<< HEAD
     "project_number": "778762968807",
     "firebase_url": "https://foodjuju-ff092.firebaseio.com",
     "project_id": "foodjuju-ff092",
     "storage_bucket": "foodjuju-ff092.appspot.com"
-=======
-    "project_number": "532986387992",
-    "firebase_url": "https://foodjuju-514f8.firebaseio.com",
-    "project_id": "foodjuju-514f8",
-    "storage_bucket": "foodjuju-514f8.appspot.com"
->>>>>>> origin/new-branch-2
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
         "mobilesdk_app_id": "1:778762968807:android:9e821d99e7f6d235988c42",
-=======
-        "mobilesdk_app_id": "1:532986387992:android:6f4a7d2961134ddcae6d6d",
->>>>>>> origin/new-branch-2
         "android_client_info": {
           "package_name": "com.example.foodjuju"
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
           "client_id": "778762968807-egg380dceq6end1vd3bj0mt8snh7enrb.apps.googleusercontent.com",
-=======
-          "client_id": "532986387992-h3v76ph3qb0o7v3ftq5dji8vf4mv91br.apps.googleusercontent.com",
->>>>>>> origin/new-branch-2
           "client_type": 3
         }
       ],
       "api_key": [
         {
-<<<<<<< HEAD
           "current_key": "AIzaSyA8cKHoQ5ay-f1NIau2t_x4SAlZiyytfy8"
-=======
-          "current_key": "AIzaSyAGApt2_4uNPLtGGTBFWK314YasLJw3hEE"
->>>>>>> origin/new-branch-2
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-<<<<<<< HEAD
               "client_id": "778762968807-egg380dceq6end1vd3bj0mt8snh7enrb.apps.googleusercontent.com",
-=======
-              "client_id": "532986387992-h3v76ph3qb0o7v3ftq5dji8vf4mv91br.apps.googleusercontent.com",
->>>>>>> origin/new-branch-2
               "client_type": 3
             }
           ]

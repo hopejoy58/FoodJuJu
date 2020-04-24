@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.FirebaseFirestore
+//import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,47 +32,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
     }
 
-    private fun saveData(){
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
-
-        foodName = findViewById(R.id.foodName)
-        foodDescription = findViewById(R.id.foodDescription)
-        foodIngredients = findViewById(R.id.foodIngredients)
-        mood = findViewById(R.id.mood)
-        moodComments = findViewById(R.id.moodComments)
-        var btn_save: Button = findViewById(R.id.button_save)
-
-        val foodId = databaseReference.push().key.toString()
-        val food = foodName.text.toString().trim()
-        val description = foodDescription.text.toString().trim()
-        val ingredients = foodIngredients.text.toString().trim()
-        val foodMood = mood.text.toString().trim()
-        val comments = moodComments.text.toString().trim()
-
-        val userProvides = FoodData(foodId, food, description, ingredients, foodMood, comments)
-        btn_save.apply {
-            databaseReference.child(foodId).setValue(userProvides)
-        }
-
-        Toast.makeText(applicationContext, "Saved", Toast.LENGTH_LONG)
-            .show()
-
-        //database.child("foods").child().setValue(userProvides)
-        /*
-        val ref = FirebaseDatabase.getInstance().getReference("foods")
-        val foodId = ref.push().key.toString()
-        val foods = FoodData(foodId, food, description, ingredients, foodMood, comments)
-
-        ref.child(foodId).setValue(foods).addOnCompleteListener {
-            Toast.makeText(applicationContext, "Successfully saved to database.", Toast.LENGTH_LONG)
-                .show()
-        }
-        */
-
-
-    }
-
+    // Validate user inputs, checks if any required fields are empty and prompts user for correction
+    // calls saveData() function to save data to firebase database.
     fun validation(){
 
         foodName = findViewById(R.id.foodName)
@@ -106,6 +67,53 @@ class MainActivity : AppCompatActivity() {
         }
         else {
             saveData()
+            clearFields()
         }
+    }
+
+
+    // Instantiates firebase database, collects user data as FoodData data object and sends to firebase.
+    private fun saveData(){
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
+
+        foodName = findViewById(R.id.foodName)
+        foodDescription = findViewById(R.id.foodDescription)
+        foodIngredients = findViewById(R.id.foodIngredients)
+        mood = findViewById(R.id.mood)
+        moodComments = findViewById(R.id.moodComments)
+        var btn_save: Button = findViewById(R.id.button_save)
+
+        val foodId = databaseReference.push().key.toString() // Generates unique ID for each transaction.
+        val food = foodName.text.toString().trim()
+        val description = foodDescription.text.toString().trim()
+        val ingredients = foodIngredients.text.toString().trim()
+        val foodMood = mood.text.toString().trim()
+        val comments = moodComments.text.toString().trim()
+
+        val userProvides = FoodData(foodId, food, description, ingredients, foodMood, comments)
+        btn_save.apply {
+            databaseReference.child(foodId).setValue(userProvides)
+            Toast.makeText(applicationContext, "Data saved.", Toast.LENGTH_LONG)
+                .show()
+        }
+
+    }
+
+
+    // This method will reset edit text fields.
+    fun clearFields(){
+        foodName = findViewById(R.id.foodName)
+        foodDescription = findViewById(R.id.foodDescription)
+        foodIngredients = findViewById(R.id.foodIngredients)
+        mood = findViewById(R.id.mood)
+        moodComments = findViewById(R.id.moodComments)
+
+        foodName.text.clear()
+        foodDescription.text.clear()
+        foodIngredients.text.clear()
+        mood.text.clear()
+        moodComments.text.clear()
+
     }
 }
