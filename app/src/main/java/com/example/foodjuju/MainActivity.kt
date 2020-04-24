@@ -5,7 +5,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -32,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             .show()
 
        // val db = FirebaseFirestore.getInstance()
-
+        var database: DatabaseReference = Firebase.database.reference
 
         foodName = findViewById(R.id.foodName)
         foodDescription = findViewById(R.id.foodDescription)
@@ -46,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         val foodMood = mood.text.toString().trim()
         val comments = moodComments.text.toString().trim()
 
+        var userProvides = FoodData(food, description, ingredients, foodMood, comments)
+        //database.child("foods").child().setValue(userProvides)
         /*
         val ref = FirebaseDatabase.getInstance().getReference("foods")
         val foodId = ref.push().key.toString()
