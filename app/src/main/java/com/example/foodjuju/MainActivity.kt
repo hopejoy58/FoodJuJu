@@ -1,11 +1,13 @@
 package com.example.foodjuju
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -19,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var foodIngredients: EditText
     lateinit var mood: EditText
     lateinit var moodComments: EditText
+    lateinit var btn_cancel: Button
+
+
+    var databaseReference: DatabaseReference = Firebase.database.reference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,25 +35,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveData(){
 
-        Toast.makeText(applicationContext, "Saved (or not lol)", Toast.LENGTH_LONG)
-            .show()
-
-       // val db = FirebaseFirestore.getInstance()
-        var database: DatabaseReference = Firebase.database.reference
+        lateinit var btn_save: Button
+        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
 
         foodName = findViewById(R.id.foodName)
         foodDescription = findViewById(R.id.foodDescription)
         foodIngredients = findViewById(R.id.foodIngredients)
         mood = findViewById(R.id.mood)
         moodComments = findViewById(R.id.moodComments)
+        btn_save = findViewById(R.id.button_save)
 
+        val foodId = databaseReference.push().key.toString()
         val food = foodName.text.toString().trim()
         val description = foodDescription.text.toString().trim()
         val ingredients = foodIngredients.text.toString().trim()
         val foodMood = mood.text.toString().trim()
         val comments = moodComments.text.toString().trim()
 
-        var userProvides = Data(food, description, ingredients, foodMood, comments)
+        val userProvides = FoodData(foodId, food, description, ingredients, foodMood, comments)
+        btn_save.setOnClickListener(View.OnClickListener {
+            databaseReference.child(foodId).setValue(userProvides)
+        })
+
+
         //database.child("foods").child().setValue(userProvides)
         /*
         val ref = FirebaseDatabase.getInstance().getReference("foods")
