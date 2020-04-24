@@ -1,15 +1,13 @@
 package com.example.foodjuju
 
 import android.os.Bundle
-import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.firebase.database.FirebaseDatabase
-
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_entry.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(applicationContext, "Saved (or not lol)", Toast.LENGTH_LONG)
             .show()
+
+       // val db = FirebaseFirestore.getInstance()
 
 
         foodName = findViewById(R.id.foodName)
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         else {
-            saveData();
+            saveData()
         }
     }
 }
