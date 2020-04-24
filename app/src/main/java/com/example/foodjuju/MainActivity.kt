@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
 
 
     // This method will reset edit text fields.
-    fun clearFields(){
+    private fun clearFields(){
         foodName = findViewById(R.id.foodName)
         foodDescription = findViewById(R.id.foodDescription)
         foodIngredients = findViewById(R.id.foodIngredients)
@@ -114,6 +114,8 @@ class MainActivity : AppCompatActivity() {
         foodIngredients.text.clear()
         mood.text.clear()
         moodComments.text.clear()
+
+        foodName.requestFocus()
 
     }
 }
