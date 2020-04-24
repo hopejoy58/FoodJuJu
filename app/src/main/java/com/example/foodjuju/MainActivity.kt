@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var foodIngredients: EditText
     lateinit var mood: EditText
     lateinit var moodComments: EditText
-    lateinit var btn_cancel: Button
-    lateinit var btn_save: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         val foodMood = mood.text.toString().trim()
         val comments = moodComments.text.toString().trim()
 
-        var userProvides = FoodData(food, description, ingredients, foodMood, comments)
+        var userProvides = Data(food, description, ingredients, foodMood, comments)
         //database.child("foods").child().setValue(userProvides)
         /*
         val ref = FirebaseDatabase.getInstance().getReference("foods")

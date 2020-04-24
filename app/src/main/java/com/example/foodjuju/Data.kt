@@ -1,6 +1,6 @@
 package com.example.foodjuju
 
-class FoodData(
+class Data(
     val food: String,
     val foodType: String,
     val ingredients: String,
