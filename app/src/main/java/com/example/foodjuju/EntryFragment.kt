@@ -1,5 +1,7 @@
 package com.example.foodjuju
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +27,22 @@ class EntryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_cancel).setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(activity!!)
+            dialogBuilder.setMessage("Close?")
+                // if the dialog is cancelable
+                .setCancelable(true)
+                .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                        dialog, id ->
+                    dialog.dismiss() })
+                .setNegativeButton("No", DialogInterface.OnClickListener {
+                        dialog, id ->
+                    dialog.dismiss() })
+
+            val alert = dialogBuilder.create()
+            //alert.setTitle("Close?")
+            alert.show()
             findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
+
         }
         view.findViewById<Button>(R.id.button_save).setOnClickListener {
             (activity as MainActivity).validation()
