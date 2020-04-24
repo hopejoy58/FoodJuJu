@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
+        view.findViewById<Button>(R.id.button_newEntry).setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_EntryFragment)
         }
     }
