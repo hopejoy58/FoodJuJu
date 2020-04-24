@@ -7,22 +7,25 @@
               android:layout_height="wrap_content">
 
   <LinearLayout
+
       android:layout_width="89dp"
       android:layout_height="154dp"
       android:orientation="vertical"
       android:padding="8dp">
 
     <ImageView
+        android:id="@+id/imgViewFood"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_gravity="top"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/food_icon" />
 
     <ImageView
+        android:id="@+id/imgViewMood"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_gravity="bottom"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/mood_icon" />
   </LinearLayout>
 
   <LinearLayout

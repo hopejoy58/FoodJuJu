@@ -39,8 +39,8 @@ class EntryFragment : Fragment() {
                     dialog.dismiss() })
 
             val alert = dialogBuilder.create()
-            //alert.setTitle("Close?")
-            alert.show()
+            //uncomment to restore close? alertbox
+            //alert.show()
             findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
 
         }
