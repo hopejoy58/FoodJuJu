@@ -11,7 +11,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * A [Fragment] subclass as the second destination in the navigation.
  */
 class EntryFragment : Fragment() {
 
@@ -27,26 +27,10 @@ class EntryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_cancel).setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(activity!!)
-            dialogBuilder.setMessage("Close?")
-                // if the dialog is cancelable
-                .setCancelable(true)
-                .setPositiveButton("Yes", DialogInterface.OnClickListener {
-                        dialog, id ->
-                    dialog.dismiss() })
-                .setNegativeButton("No", DialogInterface.OnClickListener {
-                        dialog, id ->
-                    dialog.dismiss() })
-
-            val alert = dialogBuilder.create()
-            //uncomment to restore close? alertbox
-            alert.show()
             findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
-
         }
         view.findViewById<Button>(R.id.button_save).setOnClickListener {
             (activity as MainActivity).validation()
-            //findNavController().navigate(R.id.action_EntryFragment_to_HomeFragment)
         }
 
     }

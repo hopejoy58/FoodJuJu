@@ -14,11 +14,6 @@ import com.google.firebase.ktx.Firebase
 class HomeActivity : AppCompatActivity() {
 
     private var dataList = ArrayList<FoodData>()
-    lateinit var foodName: EditText
-    lateinit var foodDescription: EditText
-    lateinit var foodIngredients: EditText
-    lateinit var mood: EditText
-    lateinit var moodComments: EditText
 
     var databaseReference: DatabaseReference = Firebase.database.reference
     private lateinit var recyclerView: RecyclerView
