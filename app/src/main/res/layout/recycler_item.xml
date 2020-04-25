@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:padding="8dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+  <LinearLayout
+
+      android:layout_width="89dp"
+      android:layout_height="154dp"
+      android:orientation="vertical"
+      android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imgViewFood"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_gravity="top"
+        tools:src="@drawable/food_icon" />
+
+    <ImageView
+        android:id="@+id/imgViewMood"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_gravity="bottom"
+        tools:src="@drawable/mood_icon" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="300dp"
+      android:layout_height="153dp"
+      android:layout_gravity="center"
+      android:orientation="vertical"
+      android:padding="5dp">
+
+    <TextView
+        android:id="@+id/card_foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem[2]" />
+
+    <TextView
+        android:id="@+id/card_foodDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem[10]" />
+
+    <TextView
+        android:id="@+id/card_foodIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem[4]" />
+
+    <TextView
+        android:id="@+id/card_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem[3]" />
+
+    <TextView
+        android:id="@+id/card_moodComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem[11]" />
+
+  </LinearLayout>
+
+</LinearLayout>
