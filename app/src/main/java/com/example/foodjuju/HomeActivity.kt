@@ -30,7 +30,27 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
 
-        loadData()
+        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                val foodId = dataSnapshot.child("foodId").getValue().toString()
+                val food = dataSnapshot.child("food").getValue().toString()
+                val foodDesc = dataSnapshot.child("foodDesc").getValue().toString()
+                val foodIng = dataSnapshot.child("foodIng").getValue().toString()
+                val mood = dataSnapshot.child("mood").getValue().toString()
+                val moodComment = dataSnapshot.child("moodComment").getValue().toString()
+                val data = FoodData(food, foodId, foodDesc, foodIng, mood, moodComment)
+                dataList.add(data)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Toast.makeText(applicationContext, "Nope.", Toast.LENGTH_LONG)
+                    .show()
+            }
+        })
 
         viewManager = LinearLayoutManager(this)
         viewAdapter = RecyclerAdapter(dataList)
@@ -47,28 +67,6 @@ class HomeActivity : AppCompatActivity() {
             adapter = viewAdapter
 
         }
-    }
-
-    private fun loadData() {
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("foods")
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value =
-                    dataSnapshot.getValue(String::class.java)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Toast.makeText(applicationContext, "Nope.", Toast.LENGTH_LONG)
-                    .show()
-            }
-        })
-
-
-
     }
 
 }

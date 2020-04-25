@@ -91,9 +91,9 @@ class MainActivity : AppCompatActivity() {
         val foodMood = mood.text.toString().trim()
         val comments = moodComments.text.toString().trim()
 
-        val userProvides = FoodData(foodId, food, description, ingredients, foodMood, comments)
+        val userProvides = FoodData(food, foodId, description, ingredients, foodMood, comments)
         btn_save.apply {
-            databaseReference.child(foodId).setValue(userProvides)
+            databaseReference.setValue(userProvides)
             Toast.makeText(applicationContext, "Data saved.", Toast.LENGTH_LONG)
                 .show()
         }

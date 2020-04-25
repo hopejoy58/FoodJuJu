@@ -1,8 +1,8 @@
 package com.example.foodjuju
 
 class FoodData(
-    val foodId: String,
     val food: String,
+    val foodId: String,
     val foodType: String,
     val ingredients: String,
     val mood: String,
